@@ -34,7 +34,6 @@ spec:
               value: wordpress
           ports:
            - containerPort: 80
-             name: wordpress
           volumeMounts:
            - name: wordpress-storage
              mountPath: /var/www/html
