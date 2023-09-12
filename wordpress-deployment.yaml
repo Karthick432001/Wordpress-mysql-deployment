@@ -32,3 +32,13 @@ spec:
                   key: MYSQL_PASSWORD
             - name: WORDPRESS_DB_NAME
               value: wordpress
+          ports:
+           - containerPort: 80
+             name: wordpress
+          volumeMounts:
+           - name: wordpress-storage
+             mountPath: /var/www/html
+      volumes:
+      - name: wordpress-storage
+        persistentVolumeClaim:
+          claimName: wordpress-pvc
